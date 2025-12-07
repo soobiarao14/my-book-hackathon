@@ -1,0 +1,99 @@
+# ROS 2 / Python / Gazebo Project .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.venv
+venv/
+ENV/
+env/
+
+# ROS 2
+install/
+log/
+build/
+*.bag
+*.db3
+*.db3-shm
+*.db3-wal
+
+# Gazebo
+.gazebo/
+*.world~
+*.sdf~
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.backup
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+credentials.json
+secrets/
+
+# Documentation builds
+docs/_build/
+docs/.docusaurus/
+docs/build/
+docs/node_modules/
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Model files (large binary files)
+*.pth
+*.ckpt
+*.safetensors
+models/weights/
+
+# Isaac Sim cache
+.isaac_sim/
+omni.logs/

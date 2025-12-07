@@ -1,0 +1,25 @@
+# Navigation System Configuration
+# TODO: Fill in actual Nav2 parameters during implementation
+
+visual_slam:
+  ros__parameters:
+    enable_imu: false
+    map_resolution: 0.05        # 5cm occupancy grid resolution
+    max_map_range: 5.0          # Map 5m around robot
+    enable_localization: false  # Mapping mode by default
+
+path_planner:
+  ros__parameters:
+    controller_frequency: 20.0  # 20 Hz control loop
+    planner_plugin: "NavfnPlanner"
+    controller_plugin: "DWB"
+    max_speed: 0.8              # 0.8 m/s max speed
+    safe_speed_near_human: 0.5  # 0.5 m/s when human within 1m
+    goal_tolerance_xy: 0.1      # 10cm position tolerance
+    goal_tolerance_theta: 0.087 # 5° heading tolerance (radians)
+
+obstacle_monitor:
+  ros__parameters:
+    danger_zone_distance: 0.5   # Emergency stop at 0.5m
+    warning_zone_distance: 1.0  # Slow down at 1m
+    monitoring_rate: 20         # 20 Hz monitoring

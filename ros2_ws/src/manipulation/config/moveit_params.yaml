@@ -1,0 +1,19 @@
+# Manipulation System Configuration
+# TODO: Fill in actual MoveIt 2 parameters during implementation
+
+grasp_planner:
+  ros__parameters:
+    gripper_width: 0.08         # 8cm max gripper opening
+    approach_distance: 0.15     # 15cm pre-grasp approach
+    grasp_quality_threshold: 0.6
+    grasp_types: ["top", "side"]  # Top-down and side grasps
+
+arm_controller:
+  ros__parameters:
+    planning_time: 5.0          # Max 5s for planning
+    num_planning_attempts: 3    # Retry 3 times
+    velocity_scaling: 0.5       # 50% max joint velocity
+    acceleration_scaling: 0.5   # 50% max joint acceleration
+    planner: "RRTConnect"       # OMPL planner (RRTConnect, RRT*, etc.)
+    workspace_min: [-0.5, -0.5, 0.0]
+    workspace_max: [0.5, 0.5, 1.0]

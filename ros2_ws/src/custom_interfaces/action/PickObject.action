@@ -1,0 +1,15 @@
+# PickObject.action
+# Multi-phase pick object action
+# Reference: specs/001-humanoid-robotics-capstone/contracts/README.md
+
+# Goal
+string object_class             # Object class to pick
+geometry_msgs/Pose approach_pose  # Approach pose for manipulation
+---
+# Result
+bool success                    # Overall success flag
+string error_message            # Error description if failed
+---
+# Feedback
+string current_phase            # Current phase (approaching/grasping/lifting)
+float32 progress                # Progress percentage (0.0-1.0)

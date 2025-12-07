@@ -1,0 +1,40 @@
+# VLA Planning System Configuration
+# TODO: Fill in actual parameter values during implementation
+
+audio_capture:
+  ros__parameters:
+    device_index: 0              # USB microphone device index
+    sample_rate: 16000           # 16kHz for Whisper
+    vad_threshold: 0.02          # Energy threshold for speech detection
+    silence_duration: 1.5        # Seconds of silence to stop recording
+    max_recording_duration: 10.0 # Max recording time in seconds
+
+whisper_asr:
+  ros__parameters:
+    api_key_env: "OPENAI_API_KEY"
+    model: "whisper-1"
+    language: "en"
+    timeout: 10.0               # API timeout in seconds
+    max_retries: 3              # Max retry attempts
+
+tts:
+  ros__parameters:
+    api_key_env: "OPENAI_API_KEY"
+    model: "tts-1"
+    voice: "alloy"              # Voice ID: alloy, echo, fable, onyx, nova, shimmer
+    output_device: -1           # -1 for system default
+
+vla_planner:
+  ros__parameters:
+    api_key_env: "GROQ_API_KEY"
+    model: "llama3-8b-8192"
+    base_url: "https://api.groq.com/openai/v1"
+    max_tokens: 512
+    temperature: 0.3            # Lower for more deterministic output
+    timeout: 5.0                # API timeout in seconds
+
+task_executor:
+  ros__parameters:
+    execution_timeout: 60.0     # Max time per subtask
+    retry_attempts: 2           # Max retries per failed subtask
+    battery_threshold: 15.0     # Battery % to abort tasks

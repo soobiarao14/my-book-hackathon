@@ -1,0 +1,8 @@
+# ComputeGrasp.srv
+# Grasp pose computation service
+# Reference: specs/001-humanoid-robotics-capstone/contracts/README.md
+
+vision_msgs/Detection3D object  # Detected object to grasp
+---
+custom_interfaces/GraspPose grasp_pose  # Computed grasp pose
+bool success                    # Computation success flag

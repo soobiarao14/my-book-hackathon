@@ -1,0 +1,9 @@
+# DetectObjects.srv
+# Object detection service
+# Reference: specs/001-humanoid-robotics-capstone/contracts/README.md
+
+sensor_msgs/Image rgb           # RGB image
+sensor_msgs/Image depth         # Aligned depth image
+string[] target_classes         # Classes to detect (empty = detect all)
+---
+vision_msgs/Detection3D[] detections  # Detected objects with 3D poses

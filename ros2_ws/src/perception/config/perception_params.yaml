@@ -1,0 +1,26 @@
+# Perception System Configuration
+# TODO: Fill in actual parameter values during implementation
+
+realsense_camera:
+  ros__parameters:
+    serial_number: ""           # Auto-detect first camera
+    frame_rate: 30              # 30 Hz RGB-D stream
+    rgb_resolution: "640x480"   # VGA resolution
+    depth_resolution: "640x480"
+    enable_depth: true
+    align_depth_to_color: true  # Required for 3D object detection
+
+object_detector:
+  ros__parameters:
+    model_path: "models/yolov8n.onnx"
+    confidence_threshold: 0.5
+    nms_iou_threshold: 0.45
+    target_classes: ["cup", "bottle", "book", "keyboard", "mouse"]
+    max_depth: 2.0              # Max valid depth in meters
+
+human_detector:
+  ros__parameters:
+    model_path: "models/yolov8n-pose.onnx"
+    confidence_threshold: 0.6
+    detection_rate: 10          # 10 Hz for safety monitoring
+    safety_distance: 1.0        # 1 meter safety threshold

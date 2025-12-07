@@ -1,0 +1,30 @@
+# ROS 2 <-> Gazebo Bridge Configuration
+# Maps Gazebo topics to ROS 2 topics for simulation
+
+# Camera topics
+- topic_name: /camera/color/image_raw
+  ros_type_name: sensor_msgs/msg/Image
+  gz_type_name: ignition.msgs.Image
+
+- topic_name: /camera/aligned_depth_to_color/image_raw
+  ros_type_name: sensor_msgs/msg/Image
+  gz_type_name: ignition.msgs.Image
+
+- topic_name: /camera/color/camera_info
+  ros_type_name: sensor_msgs/msg/CameraInfo
+  gz_type_name: ignition.msgs.CameraInfo
+
+# IMU topic
+- topic_name: /imu/data
+  ros_type_name: sensor_msgs/msg/Imu
+  gz_type_name: ignition.msgs.IMU
+
+# Velocity commands
+- topic_name: /cmd_vel_safe
+  ros_type_name: geometry_msgs/msg/Twist
+  gz_type_name: ignition.msgs.Twist
+
+# Joint states
+- topic_name: /joint_states
+  ros_type_name: sensor_msgs/msg/JointState
+  gz_type_name: ignition.msgs.Model
