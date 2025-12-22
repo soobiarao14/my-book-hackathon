@@ -1,0 +1,23 @@
+# FastAPI Backend Requirements
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-dotenv==1.0.0
+
+# AI/ML Libraries
+cohere==4.47
+openai==1.10.0
+qdrant-client==1.7.3
+
+# Database
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.25
+
+# Utilities
+pydantic==2.5.3
+httpx==0.26.0
+python-multipart==0.0.6
+
+# Content Processing
+beautifulsoup4==4.12.3
+markdown==3.5.2
+pypdf==3.17.4
