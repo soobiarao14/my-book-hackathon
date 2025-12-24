@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, type JSX } from 'react';
 
 /**
  * RAG Chatbot Widget Component for Docusaurus
@@ -7,7 +7,11 @@ import React, { useEffect } from 'react';
  * It supports selected text queries and maintains conversation history.
  */
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
+// Use localhost in development, Hugging Face URL in production
+const BACKEND_URL = typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:8000'
+  : 'https://sobiarao-chatbot.hf.space';
 
 export default function ChatbotWidget(): JSX.Element {
   useEffect(() => {
